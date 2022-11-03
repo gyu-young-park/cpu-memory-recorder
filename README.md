@@ -6,23 +6,32 @@ The Output shcema is `csv`, Please refer to below
 date(MM-DD-hh-mm-ss),cpu-usage,memory-usage
 ```
 
-- example)  
+- example
 ```
 11:03:14:59:10,1.07,38.91
 ```
 
-# How to use
+Above real data is align with below schema
+| Data | CPU Usage  | Memory Usage  |
+|---|---|---|
+| 11:03:14:59:10 | 1.07%  | 38.91%  |
 
+# How to use
 ## Start
+default output file path is `./cpu-mem.csv`, and default interval of recording is `3s`
 ```sh
 ./cpu_memory_recorder.sh
 ```
-
 ## Option
 There are two options. The One is output file path, the other is interval of recording.
 ```
 ./cpu_memory_recorder.sh -o {file-path} -i {interval}
 ```
+| option | describe  | example  | 
+|---|---|---|
+| `-o`  | change output file path  | `./cpu_memory_recorder.sh -o /tmp/resource-record.csv`  |
+| `-i`  | change interval of recording  | `./cpu_memory_recorder.sh -i 10` (10s record)  |
+
 
 You can use help option(`-h`). It provide how to use this program
 ```
